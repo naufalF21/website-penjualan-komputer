@@ -29,11 +29,8 @@
                     <input type="password" name="password" id="password" class="form-control custom-input py-4 px-3"
                         placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required>
                 </div>
-                <div class="custom-control custom-switch my-4">
-                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                    <label class="custom-control-label" for="customSwitch1">Remember me</label>
-                </div>
-                <button type="submit" class="btn btn-primary w-100 font-weight-bold py-2 custom-btn">Sign up</button>
+
+                <button type="submit" class="btn btn-primary w-100 mt-4 font-weight-bold py-2 custom-btn">Sign up</button>
             </form>
             <p class="text-center" style="color: #8392AB">Already have an account? <a href="/"
                     class="font-weight-bold text-primary">Sign in here</a></p>
