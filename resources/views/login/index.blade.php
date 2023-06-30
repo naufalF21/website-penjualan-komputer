@@ -2,9 +2,20 @@
 @section('container')
     <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh">
         @if ($errors->has('email') || session()->has('loginError'))
-            <div>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 {{ $errors->first('email') ?? '' }}
                 {{ session('loginError') ?? '' }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
+        @if (session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
         @endif
         <div class="card px-5 py-5 custom-card">
