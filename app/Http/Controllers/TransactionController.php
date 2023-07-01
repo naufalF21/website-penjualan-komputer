@@ -12,7 +12,7 @@ class TransactionController extends Controller
         $transactions = DB::table('transactions')->get();
 
         return view('transaction.index', [
-            'title' => 'Transaction',
+            'title' => 'Penjualan',
             'transactions' => $transactions,
         ]);
     }
