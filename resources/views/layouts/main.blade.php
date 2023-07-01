@@ -19,10 +19,16 @@
 </head>
 
 <body>
+
     @include('partials.navbar')
+    <div id="layoutSidenav">
+        @include('partials.sidebar')
+        <div id="layoutSidenav_content">
+            @yield('container')
 
-    @yield('container')
-
+            @include('partials.footer')
+        </div>
+    </div>
     {{-- font awesome --}}
     <script src="https://use.fontawesome.com/ad06ed8c97.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>

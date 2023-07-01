@@ -1,5 +1,5 @@
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-blues">
-    <a class="navbar-brand" href="index.html">{{ $title }}</a>
+    <a class="navbar-brand" href="/dashboard">Dashboard</a>
     <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i
             class="fas fa-bars"></i></button>
     <!-- Navbar Search-->
