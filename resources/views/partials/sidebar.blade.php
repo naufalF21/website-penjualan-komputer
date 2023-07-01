@@ -3,7 +3,8 @@
         <div class="sb-sidenav-menu">
             <div class="nav">
                 <div class="sb-sidenav-menu-heading">PENJUALAN KOMPUTER</div>
-                <a class="nav-link text-dark font-weight-normal" href="index.html">
+                <a class="nav-link text-dark {{ request()->is('dashboard') ? 'font-weight-bolder' : '' }}"
+                    href="/dashboard">
                     <div class="sb-nav-link-icon">
                         <svg class="mr-1 mb-1" width="16" height="17" viewBox="0 0 16 17" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -26,7 +27,7 @@
                     Dashboard
                 </a>
                 <div class="sb-sidenav-menu-heading">PAGES</div>
-                <a class="nav-link text-dark {{ request()->is('item') ? 'font-weight-bolder' : '' }}" href="/item">
+                <a class="nav-link text-dark {{ request()->is('barang') ? 'font-weight-bolder' : '' }}" href="/barang">
                     <div class="sb-nav-link-icon">
                         <svg class="mr-1 mb-1" width="16" height="17" viewBox="0 0 16 17" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -38,8 +39,8 @@
                     </div>
                     Barang
                 </a>
-                <a class="nav-link text-dark {{ request()->is('transaction') ? 'font-weight-bolder' : '' }}"
-                    href="/transaction">
+                <a class="nav-link text-dark {{ request()->is('penjualan') ? 'font-weight-bolder' : '' }}"
+                    href="/penjualan">
                     <div class="sb-nav-link-icon">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                             xmlns="http://www.w3.org/2000/svg">

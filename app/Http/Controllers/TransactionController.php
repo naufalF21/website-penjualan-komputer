@@ -11,7 +11,7 @@ class TransactionController extends Controller
     {
         $transactions = DB::table('transactions')->get();
 
-        return view('transaction.index', [
+        return view('penjualan.index', [
             'title' => 'Penjualan',
             'transactions' => $transactions,
         ]);
