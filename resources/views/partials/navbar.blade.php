@@ -21,7 +21,10 @@
                 <a class="dropdown-item" href="#">Settings</a>
                 <a class="dropdown-item" href="#">Activity Log</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/logout">Logout</a>
+                <form action="/logout" method="POST">
+                    @csrf
+                    <button class="dropdown-item">Logout</button>
+                </form>
             </div>
         </li>
     </ul>
