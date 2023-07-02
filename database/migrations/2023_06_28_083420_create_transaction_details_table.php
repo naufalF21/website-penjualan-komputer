@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('penjualan_id');
             $table->foreignId('barang_id');
-            $table->integer('jumlah');
-            $table->float('harga_satuan');
-            $table->float('harga_total');
+            $table->string('jumlah');
+            $table->string('harga_satuan');
+            $table->string('harga_total');
             $table->timestamps();
         });
     }

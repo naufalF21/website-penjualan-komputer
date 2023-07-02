@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\TransactionDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,14 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
-Route::get('/penjualan', [TransactionController::class, 'index'])->middleware('auth');
+Route::get('/penjualan', [TransactionController::class, 'index'])->name('penjualan.index')->middleware('auth');
+Route::get('/penjualan/create', [TransactionController::class, 'create'])->middleware('auth');
+Route::post('/penjualan', [TransactionController::class, 'store'])->name('penjualan.store')->middleware('auth');;
+Route::get('/penjualan/{id}/edit', [TransactionController::class, 'edit'])->middleware('auth');
+Route::post('/penjualan/{id}', [TransactionController::class, 'update'])->name('penjualan.update')->middleware('auth');
+Route::delete('/penjualan/{id}', [TransactionController::class, 'delete'])->name('penjualan.delete')->middleware('auth');;
+
+Route::get('/penjualan/{id}/detail', [TransactionDetailController::class, 'index'])->middleware('auth');
+
 
 Route::get('/barang', [ItemController::class, 'index'])->middleware('auth');

@@ -5,10 +5,10 @@
             <h3 class="mt-4">{{ $title }}</h3>
             <div class="d-flex justify-content-between mb-4">
                 <p>List {{ $title }} Terakhir</p>
-                <div class="custom-btn-add">
+                <a href="/penjualan/create" style="text-decoration: none !important;">
                     <span class="mr-2 font-weight-bold">Penjualan</span>
                     <span class="fa fa-plus text-success" aria-hidden="true"></span>
-                </div>
+                </a>
             </div>
             <hr>
             {{-- table --}}
@@ -31,8 +31,10 @@
                                         <td>{{ $transaction->tanggal_penjualan }}</td>
                                         <td>{{ $transaction->alamat }}</td>
                                         <td class="d-flex">
-                                            <button class="btn btn-success mr-3 custom-btn-table">edit</button>
-                                            <button class="btn btn-secondary custom-btn-table">detail</button>
+                                            <a href="/penjualan/{{ $transaction->id }}/edit"
+                                                class="btn btn-success mr-3 custom-btn-table">edit</a>
+                                            <a href="/penjualan/{{ $transaction->transaction_details }}/detail"
+                                                type="submit" class="btn btn-secondary custom-btn-table">detail</a>
                                         </td>
                                     </tr>
                                 @endforeach

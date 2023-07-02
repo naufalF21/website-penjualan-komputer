@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->char('kode_barang')->unique();
             $table->string('nama');
-            $table->float('harga_jual');
-            $table->float('harga_beli');
-            $table->integer('stok');
+            $table->string('harga_jual');
+            $table->string('harga_beli');
+            $table->string('stok');
             $table->string('kategori');
             $table->timestamps();
         });
