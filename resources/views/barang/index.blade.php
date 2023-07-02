@@ -3,7 +3,13 @@
     <main>
         <div class="container-fluid">
             <h3 class="mt-4">Barang</h3>
-            <p>List master barang komputer</p>
+            <div class="d-flex justify-content-between mb-4">
+                <p>List master {{ $title }} komputer</p>
+                <a href="/barang/create" style="text-decoration: none !important;">
+                    <span class="mr-2 font-weight-bold">Barang</span>
+                    <span class="fa fa-plus text-success" aria-hidden="true"></span>
+                </a>
+            </div>
             <hr>
             {{-- table --}}
             <div class="card mb-4">
@@ -12,41 +18,32 @@
                         <table class="table" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>Nama Barang</th>
+                                    <th>No</th>
                                     <th>Kode Barang</th>
-                                    <th>Kategori</th>
-                                    <th>Stok</th>
+                                    <th>Nama Barang</th>
                                     <th>Harga Jual</th>
                                     <th>Harga Beli</th>
+                                    <th>Stok</th>
+                                    <th>Kategori</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
-                            <tfoot>
-                                <tr>
-                                    <th>Nama Barang</th>
-                                    <th>Kode Barang</th>
-                                    <th>Kategori</th>
-                                    <th>Stok</th>
-                                    <th>Harga Jual</th>
-                                    <th>Harga Beli</th>
-                                </tr>
-                            </tfoot>
                             <tbody>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
-                                </tr>
-                                <tr>
-                                    <td>Garrett Winters</td>
-                                    <td>Accountant</td>
-                                    <td>Tokyo</td>
-                                    <td>63</td>
-                                    <td>2011/07/25</td>
-                                    <td>$170,750</td>
-                                </tr>
+                                @foreach ($items as $key => $item)
+                                    <tr>
+                                        <td>{{ $key + 1 }}</td>
+                                        <td>{{ $item->kode_barang }}</td>
+                                        <td>{{ $item->nama }}</td>
+                                        <td>{{ $item->harga_jual }}</td>
+                                        <td>{{ $item->harga_beli }}</td>
+                                        <td>{{ $item->stok }}</td>
+                                        <td>{{ $item->kategori }}</td>
+                                        <td>
+                                            <a href="/barang/{{ $item->id }}/edit"
+                                                class="btn btn-success mr-3 custom-btn-table">edit</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

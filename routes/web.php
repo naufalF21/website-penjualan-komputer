@@ -30,12 +30,17 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 
 Route::get('/penjualan', [TransactionController::class, 'index'])->name('penjualan.index')->middleware('auth');
 Route::get('/penjualan/create', [TransactionController::class, 'create'])->middleware('auth');
-Route::post('/penjualan', [TransactionController::class, 'store'])->name('penjualan.store')->middleware('auth');;
+Route::post('/penjualan', [TransactionController::class, 'store'])->name('penjualan.store')->middleware('auth');
 Route::get('/penjualan/{id}/edit', [TransactionController::class, 'edit'])->middleware('auth');
 Route::post('/penjualan/{id}', [TransactionController::class, 'update'])->name('penjualan.update')->middleware('auth');
 Route::delete('/penjualan/{id}', [TransactionController::class, 'delete'])->name('penjualan.delete')->middleware('auth');;
 
-Route::get('/penjualan/{id}/detail', [TransactionDetailController::class, 'index'])->middleware('auth');
+Route::get('/detail-penjualan/{transaction:id}', [TransactionDetailController::class, 'index'])->middleware('auth');
 
 
-Route::get('/barang', [ItemController::class, 'index'])->middleware('auth');
+Route::get('/barang', [ItemController::class, 'index'])->name('barang.index')->middleware('auth');
+Route::get('/barang/create', [ItemController::class, 'create'])->middleware('auth');
+Route::post('/barang', [ItemController::class, 'store'])->name('barang.store')->middleware('auth');
+Route::get('/barang/{id}/edit', [ItemController::class, 'edit'])->middleware('auth');
+Route::post('/barang/{id}', [ItemController::class, 'update'])->name('barang.update')->middleware('auth');
+Route::delete('/barang/{id}', [ItemController::class, 'delete'])->name('barang.delete')->middleware('auth');;

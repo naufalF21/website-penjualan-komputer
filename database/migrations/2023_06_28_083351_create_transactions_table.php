@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->date('tanggal_penjualan');
-            $table->string('nama_konsumen');
+            $table->string('nama_konsumen')->unique();
             $table->string('alamat');
             $table->timestamps();
         });

@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('transaction_details', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('penjualan_id');
-            $table->foreignId('barang_id');
+            $table->foreignId('transaction_id');
             $table->string('jumlah');
             $table->string('harga_satuan');
             $table->string('harga_total');

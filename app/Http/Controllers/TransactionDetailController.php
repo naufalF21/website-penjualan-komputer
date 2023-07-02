@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\TransactionDetail;
+use App\Models\Item;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
+use App\Models\TransactionDetail;
+use Illuminate\Support\Facades\DB;
 
 class TransactionDetailController extends Controller
 {
-    public function index($id)
+    public function index(Transaction $transaction)
     {
-        $transactionDetail = TransactionDetail::find($id);
         return view('penjualan.detail', [
-            'title' => 'Detail Penjualan',
-            'transactionDetail' => $transactionDetail
+            'title' => 'Post Categories',
+            'transaction' => $transaction,
+            'transactionDetail' => TransactionDetail::find($transaction)->first()
         ]);
     }
 }

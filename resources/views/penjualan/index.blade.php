@@ -18,6 +18,7 @@
                         <table class="table" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
+                                    <th>No</th>
                                     <th>Nama Konsumen</th>
                                     <th>Tanggal</th>
                                     <th>Alamat</th>
@@ -25,16 +26,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($transactions as $transaction)
+                                @foreach ($transactions as $key => $transaction)
                                     <tr>
+                                        <td>{{ $key + 1 }}</td>
                                         <td>{{ $transaction->nama_konsumen }}</td>
                                         <td>{{ $transaction->tanggal_penjualan }}</td>
                                         <td>{{ $transaction->alamat }}</td>
                                         <td class="d-flex">
                                             <a href="/penjualan/{{ $transaction->id }}/edit"
                                                 class="btn btn-success mr-3 custom-btn-table">edit</a>
-                                            <a href="/penjualan/{{ $transaction->transaction_details }}/detail"
-                                                type="submit" class="btn btn-secondary custom-btn-table">detail</a>
+                                            <a href="/detail-penjualan/{{ $transaction->id }}" type="submit"
+                                                class="btn btn-secondary custom-btn-table">detail</a>
                                         </td>
                                     </tr>
                                 @endforeach

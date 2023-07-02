@@ -16,6 +16,7 @@
 
     {{-- custom css --}}
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    @stack('head')
 </head>
 
 <body>
@@ -51,6 +52,17 @@
     <script src="https://cdn.datatables.net/v/bs4/dt-1.13.4/r-2.4.1/datatables.min.js"></script>
     {{-- custom js --}}
     <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+    {{-- chart --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="{{ asset('assets/js/chart-bar-demo.js') }}"></script>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="{{ asset('assets/js/chart-pie-demo.js') }}"></script>
 </body>
 
 </html>
