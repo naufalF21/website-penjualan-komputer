@@ -1,3 +1,5 @@
+$("#dataTable").DataTable();
+
 (function ($) {
     "use strict";
 
